@@ -5,6 +5,8 @@ public class Game {
     Scanner myScanner = new Scanner(System.in);
     int playerHP;
     String playerName;
+    String playerWeapon;
+    int choice;
     public static void main(String[] args) {
         Game dublin;
         dublin = new Game();
@@ -16,7 +18,7 @@ public void playerSetUp(){
 
     playerHP = 15;
 
-    String playerWeapon;
+
     playerWeapon = "Knife";
 
     System.out.println("Your HP: "+ playerHP);
@@ -43,8 +45,22 @@ public void townGate(){
     System.out.println("2: Attack the guard");
     System.out.println("3: Leave");
 
-    int choice;
-    choice = myScanner.nextInt();
 
-}
+    choice = myScanner.nextInt();
+    if(choice==1){
+        System.out.println("Guard: Hello there, Stanger! So, your name is "+playerName+"? Sorry, but we cannot let a stranger enter our town.");
+        townGate();
+    }
+    else if(choice==2){
+        playerHP = playerHP-1;
+        System.out.println("Guard: Hey don't be stupid.\nThe guard hit you so hard and you gave up\n(You recieved 1 damage)");
+        System.out.println("Your HP: "+playerHP);
+        townGate();
+
+    }
+    else if(choice==3){
+
+    }
+    }
+
 }
